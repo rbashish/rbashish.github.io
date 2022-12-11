@@ -3,4 +3,4 @@ from django.http import HttpResponse
 
 
 def index(request):
-    return HttpResponse("Hello, Apex myrun2. You're seeing the root folder.")
+    return HttpResponse("Hello, Apex new. You're seeing the root folder.")
