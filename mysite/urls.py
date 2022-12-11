@@ -13,12 +13,30 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+
+#Add URL maps to redirect the base URL to our application
+""" from django.views.generic import RedirectView
+from django.urls import path 
+
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('home/', include('home.urls')),
+    path('', RedirectView.as_view(url='home/')),
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) """
+
+
+
+
 from django.contrib import admin
 from django.urls import include, path
 from . import views
 
+
+
 urlpatterns = [
-    path('', views.index, name='index'),
+    #path('', views.index),
     path('home/', include('home.urls')),
     path('admin/', admin.site.urls),
-]
+    path("", include("singlepage.urls")),
+] 

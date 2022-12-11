@@ -6,7 +6,12 @@ from django.template import loader
 def index(request):
     template = loader.get_template('home/index.html')
     #return HttpResponse("Hello, Django. You're at action.")
-    return HttpResponse(template.render)
+    return HttpResponse(template.render) 
+
+def home(request):
+    template = loader.get_template('home/index.html')
+    return HttpResponse(template.render) 
+    #return render(request, home/index.html)
 
 """ from django.http import HttpResponse
 from django.template import loader
